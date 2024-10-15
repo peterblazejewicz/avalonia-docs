@@ -75,7 +75,7 @@ The following code is creating an extension method for `IServiceCollection` that
 public static class ServiceCollectionExtensions {
     public static void AddCommonServices(this IServiceCollection collection) {
         collection.AddSingleton<IRepository, Repository>();
-        collection.AddTransient<BusinessService>();
+        collection.AddTransient<IBusinessService, BusinessService>();
         collection.AddTransient<MainViewModel>();
     }
 }
